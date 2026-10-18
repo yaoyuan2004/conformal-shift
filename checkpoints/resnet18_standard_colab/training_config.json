@@ -1,0 +1,37 @@
+{
+  "run_name": "standard_resnet18_cifar10",
+  "model": "CIFAR-style ResNet-18",
+  "stem_kernel_size": 3,
+  "stem_stride": 1,
+  "initial_maxpool": false,
+  "pretrained_weights": null,
+  "num_classes": 10,
+  "seed": 42,
+  "epochs": 75,
+  "batch_size": 64,
+  "optimizer": "SGD",
+  "initial_lr": 0.05,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "scheduler": "CosineAnnealingLR",
+  "scheduler_t_max": 75,
+  "scheduler_eta_min": 0.0,
+  "augmentation": [
+    "RandomCrop(32, padding=4)",
+    "RandomHorizontalFlip()"
+  ],
+  "normalization_mean": [
+    0.4914,
+    0.4822,
+    0.4465
+  ],
+  "normalization_std": [
+    0.247,
+    0.2435,
+    0.2616
+  ],
+  "num_workers": 2,
+  "pin_memory": true,
+  "use_amp": true,
+  "cudnn_benchmark": true
+}

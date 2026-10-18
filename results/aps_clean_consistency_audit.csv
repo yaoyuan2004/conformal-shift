@@ -1,0 +1,7 @@
+model_key,split_seed,coverage_from_set_membership,coverage_from_true_score_le_q,difference_from_target,nominal_standard_errors,q_hat_recomputed_matches,set_and_score_coverage_match
+standard_resnet18,42,0.897,0.897,-0.0030000000000000027,-0.7071067811865482,True,True
+standard_resnet18,43,0.9012,0.9012,0.0011999999999999789,0.28284271247461407,True,True
+standard_resnet18,44,0.9068,0.9068,0.006800000000000028,1.6027753706895145,True,True
+augmix_resnet18,42,0.8946,0.8946,-0.005400000000000071,-1.2727922061358024,True,True
+augmix_resnet18,43,0.8988,0.8988,-0.0011999999999999789,-0.28284271247461407,True,True
+augmix_resnet18,44,0.914,0.914,0.014000000000000012,3.2998316455372247,True,True

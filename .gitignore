@@ -1,0 +1,30 @@
+# Python and Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+
+# Local datasets, downloaded archives, and large prediction caches
+/data/raw/
+/data/archives/
+/data/splits/
+/cifar-10-batches-py*.zip
+/cifar10_batches_user_download.zip
+/archives/
+/cached_outputs/**/*.npz
+
+# Keep only frozen inference-ready model weights; ignore resumable training state.
+# Per-epoch training logs and plots are local run records.
+/checkpoints/**/training_history.csv
+/checkpoints/**/training_loss_history.csv
+/checkpoints/**/learning_rate_history.csv
+/checkpoints/**/training_loss.png
+/checkpoints/**/learning_rate.png
+/checkpoints/**/*.pt
+!/checkpoints/**/final_model.pt
+# Local safety copies created during Stage 9 corrections (not analysis inputs)
+/figures/backups/
+/results/archive/

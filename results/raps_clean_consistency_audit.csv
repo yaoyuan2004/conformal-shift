@@ -1,0 +1,7 @@
+model_key,split_seed,order_statistic_k_1_based,q_hat_recomputed_matches,score_set_membership_matches,true_label_rows_checked
+standard_resnet18,42,4501,True,True,5000
+standard_resnet18,43,4501,True,True,5000
+standard_resnet18,44,4501,True,True,5000
+augmix_resnet18,42,4501,True,True,5000
+augmix_resnet18,43,4501,True,True,5000
+augmix_resnet18,44,4501,True,True,5000

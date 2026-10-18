@@ -1,0 +1,20 @@
+{
+  "model_key": "standard_resnet18",
+  "display_name": "Standard ResNet-18",
+  "checkpoint_file": "checkpoints/resnet18_standard_colab/final_model.pt",
+  "checkpoint_sha256": "6d0961e543a27780c58363a3136fe7a318c4b79e306ae5b04c7ad2eb7594f7b1",
+  "training_config_file": "checkpoints/resnet18_standard_colab/training_config.json",
+  "training_config_sha256": "ae39bc61159777a1429b37220bc94cd4f896ec85d92c771da753c848ed7d7956",
+  "architecture": "CIFAR-style ResNet-18",
+  "normalization_mean": [
+    0.4914,
+    0.4822,
+    0.4465
+  ],
+  "normalization_std": [
+    0.247,
+    0.2435,
+    0.2616
+  ],
+  "device": "cuda:0"
+}

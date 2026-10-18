@@ -1,0 +1,176 @@
+{
+  "project": "Conformal Coverage Under Distribution Shift on CIFAR-10",
+  "stage": 9,
+  "nominal_coverage": 0.9,
+  "models": [
+    "standard_resnet18",
+    "augmix_resnet18"
+  ],
+  "methods": [
+    "LAC",
+    "APS",
+    "RAPS"
+  ],
+  "split_seeds": [
+    42,
+    43,
+    44
+  ],
+  "corruptions": [
+    "gaussian_noise",
+    "defocus_blur",
+    "brightness"
+  ],
+  "severities": [
+    1,
+    3,
+    5
+  ],
+  "target_priors": {
+    "airplane_automobile_mild": [
+      0.15,
+      0.15,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875
+    ],
+    "airplane_automobile_moderate": [
+      0.2,
+      0.2,
+      0.075,
+      0.075,
+      0.075,
+      0.075,
+      0.075,
+      0.075,
+      0.075,
+      0.075
+    ],
+    "airplane_automobile_severe": [
+      0.3,
+      0.3,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ],
+    "balanced": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "cat_dog_mild": [
+      0.0875,
+      0.0875,
+      0.0875,
+      0.15,
+      0.0875,
+      0.15,
+      0.0875,
+      0.0875,
+      0.0875,
+      0.0875
+    ],
+    "cat_dog_moderate": [
+      0.075,
+      0.075,
+      0.075,
+      0.2,
+      0.075,
+      0.2,
+      0.075,
+      0.075,
+      0.075,
+      0.075
+    ],
+    "cat_dog_severe": [
+      0.05,
+      0.05,
+      0.05,
+      0.3,
+      0.05,
+      0.3,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ]
+  },
+  "source_sha256": {
+    "stage4_cache_accuracy_summary.csv": "d34251ae9ceaa15a9213dec0bb9f2a9f410ed9665d54ae3a630137aefd7e3521",
+    "lac_clean_metrics.csv": "c2e5c09eadfbbb7f0057b1d16de3c1fa8ca906d771283ac8e65e5d52e3a78d95",
+    "aps_clean_metrics.csv": "027b7c21e01164705a83baac65a2ad356ce82f7fd3a6a87eacd0d77ae5571ab4",
+    "raps_clean_metrics.csv": "5178f02e05a05da19ec90c967db27f4dc1f925618cad67a588f93147cd2aa0c4",
+    "lac_corruption_metrics.csv": "a93354e84c1740685a09d0c0b48370a6256ba2425b0a11adf5fde64c21f56a71",
+    "aps_corruption_metrics.csv": "f28c506aded62c5930ea1ac771762d98722545f9d5ac95aac1a55ec9538b6275",
+    "raps_corruption_metrics.csv": "ef043db3366d6e5b23d2e208274a2f4dbd56685cf15eb5e24f69b4b0864faaf9",
+    "label_shift_split_results.csv": "e9a804ca7cf9235cc1f2a2d503e8c49c693fa3b87a026c96d635c29fad15cbc3",
+    "label_shift_summary_mean_std.csv": "59220403e49c0b6d6c25391cb8073f3c2f301148f5da598ef69286bebb16ab77",
+    "label_shift_class_conditional_metrics.csv": "1559f289b87c0a57f1ecf17cfcbb34871219f255c22aa8ccd14a980f54692a87",
+    "label_shift_target_priors.csv": "436c9dc132051624df0afcef9a6c765aa99388e01617d0f204608a69f70bd2c9",
+    "label_shift_baseline_reconstruction_audit.csv": "c57bebd05c5075a14feffbc3fae7e9828a72d3212bbf9c5bf000df57485edd34",
+    "label_shift_monte_carlo_validation.csv": "b93e789ea3d6ab2289ba3a2588263f6137c4cc336dd6917b6d76e101d735659a"
+  },
+  "compact_metadata_sha256": {
+    "results/stage4_cache_manifest.json": "fb48def6a44385d788bb10bc292260d2cf343a717350cc25c1ec55613b9ba261",
+    "results/stage4_cache_accuracy_summary.csv": "d34251ae9ceaa15a9213dec0bb9f2a9f410ed9665d54ae3a630137aefd7e3521",
+    "results/model_metadata_standard_resnet18.json": "475f2e79db24db3e0e73ba44d56482b33352b4c0d3d6c07314d1af8a9e03cafe",
+    "results/model_metadata_augmix_resnet18.json": "5732c3e6c06ead46045d2a1774d97acaf65f0e6b84c693dbaf0c6648656af256",
+    "results/training_config_standard_resnet18.json": "ae39bc61159777a1429b37220bc94cd4f896ec85d92c771da753c848ed7d7956",
+    "results/training_config_augmix_resnet18.json": "207584008a53d9e22321326bd46ff45f185db8281bb3b61678871b0fdd537be2"
+  },
+  "audit": {
+    "cache_rows": 20,
+    "clean_rows": 18,
+    "corruption_rows": 162,
+    "label_shift_split_rows": 126,
+    "class_conditional_rows": 180,
+    "baseline_rows": 18,
+    "baseline_passed": true,
+    "split_indices_disjoint_and_complete": true,
+    "group_contrast_rows": 36,
+    "group_contrast_summary_rows": 12,
+    "group_partition_and_coverage_identity_passed": true
+  },
+  "derived_analysis_correction": "Corrected Stage 9 class-conditional group contrasts so each emphasized pair is compared with its own complementary eight classes; Stage 8 experiment results are unchanged.",
+  "generated_tables": [
+    "stage9_clean_split_metrics.csv",
+    "stage9_clean_summary_mean_std.csv",
+    "stage9_corruption_split_metrics.csv",
+    "stage9_corruption_summary_mean_std.csv",
+    "stage9_severity5_comparison.csv",
+    "stage9_label_shift_main_scenarios.csv",
+    "stage9_class_conditional_group_contrasts_split.csv",
+    "stage9_class_conditional_group_contrasts_summary.csv"
+  ],
+  "figures": [
+    "figure1_corruption_coverage",
+    "figure2_corruption_set_size",
+    "figure3_severity5_coverage_setsize_tradeoff",
+    "figure4_label_shift_coverage",
+    "figure5_class_conditional_coverage_heatmap"
+  ],
+  "figure_regeneration": {
+    "explicit_option": "REGENERATE_FIGURES",
+    "default": false,
+    "backup_directory": "figures/backups/before_explicit_regeneration_<UTC timestamp>/<figure stem>"
+  },
+  "scope": "No training, inference, recalibration, hyperparameter tuning, or new shifts in Stage 9.",
+  "split_note": "Three overlapping splits are sensitivity checks, not independent experimental replications."
+}

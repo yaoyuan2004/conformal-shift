@@ -1,0 +1,20 @@
+{
+  "model_key": "augmix_resnet18",
+  "display_name": "AugMix ResNet-18",
+  "checkpoint_file": "checkpoints/resnet18_augmix_colab/final_model.pt",
+  "checkpoint_sha256": "6a0579c1385361eb8f6d62cfabaf56bad9fcf20d6334e4fbcc6c794dbc226231",
+  "training_config_file": "checkpoints/resnet18_augmix_colab/training_config.json",
+  "training_config_sha256": "207584008a53d9e22321326bd46ff45f185db8281bb3b61678871b0fdd537be2",
+  "architecture": "CIFAR-style ResNet-18",
+  "normalization_mean": [
+    0.4914,
+    0.4822,
+    0.4465
+  ],
+  "normalization_std": [
+    0.247,
+    0.2435,
+    0.2616
+  ],
+  "device": "cuda:0"
+}
