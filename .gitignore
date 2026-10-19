@@ -7,14 +7,22 @@ venv/
 env/
 .env
 
-# Local datasets, downloaded archives, and large prediction caches
-/data/raw/
+# Raw training data, downloaded archives, and unused prediction files
+/data/raw/*
+!/data/raw/cifar-10-batches-py/
+/data/raw/cifar-10-batches-py/*
+!/data/raw/cifar-10-batches-py/test_batch
 /data/archives/
-/data/splits/
+/data/splits/*
+!/data/splits/clean_test_split_seed42.npz
+!/data/splits/clean_test_split_seed43.npz
+!/data/splits/clean_test_split_seed44.npz
 /cifar-10-batches-py*.zip
 /cifar10_batches_user_download.zip
 /archives/
 /cached_outputs/**/*.npz
+!/cached_outputs/stage4_predictions/augmix_resnet18/*.npz
+!/cached_outputs/stage4_predictions/standard_resnet18/*.npz
 
 # Keep only frozen inference-ready model weights; ignore resumable training state.
 # Per-epoch training logs and plots are local run records.

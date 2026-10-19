@@ -40,7 +40,9 @@ Use Python 3.12 or newer with the packages in `requirements.txt`. PyTorch and to
 
 To reproduce the final tables and figures from a GitHub clone, run `notebooks/05_final_analysis.ipynb`. It reads the validated Stage 4–8 metric CSVs and compact metadata in `results/`. It does not need datasets, saved split files, model inference, prediction caches, or checkpoints. Its split-integrity check recreates the fixed Stage 1 partitions in memory from seeds 42, 43, and 44.
 
-To rerun the experiments, follow the notebook order above. Stage 1 uses the existing CIFAR-10 archive or extracted batches. Stage 4 checks for complete prediction caches first and downloads the approved CIFAR-10-C arrays only when they are needed. Stage 1 deterministically creates the calibration/evaluation splits; they are runtime files and are excluded from Git. Official training and cache generation use a CUDA runtime, with Google Drive available for persistent Colab outputs. Keep raw datasets, downloaded archives, generated split files, prediction caches, resume checkpoints, and per-epoch training histories out of the repository. The final model weights are optional if direct inference is desired; Stage 9 does not use them.
+To recompute the experimental metrics from a GitHub clone, start with `notebooks/03_conformal_methods.ipynb`, then run `notebooks/04_label_shift_experiments.ipynb`. The repository includes all 20 audited Stage 4 prediction caches, the three fixed split-index files, the CIFAR-10 test batch used for label checks, and the saved APS/RAPS randomization values. Stages 5–8 can therefore run from these saved inputs without model inference, a GPU, or CIFAR-10-C downloads. `notebooks/05_final_analysis.ipynb` reads the committed results and runs without datasets, caches, checkpoints, or GPU.
+
+`notebooks/02_cache_model_outputs_colab.ipynb` audits the complete committed cache bundle without inference. If caches must be regenerated, that notebook needs the fixed model checkpoints and approved CIFAR-10-C arrays; a CUDA runtime is recommended. Re-running the official training notebooks requires the CIFAR-10 training data and a CUDA runtime. Large source datasets, downloaded archives, resumable checkpoints, and per-epoch training histories stay outside Git.
 
 Do not use calibration/evaluation data for checkpoint selection, and do not recalibrate on shifted data.
 
@@ -75,9 +77,9 @@ The 18 baseline reconstructions matched the saved clean metrics to numerical pre
 
 - `notebooks/`: inspectable experimental workflow
 - `src/`: small shared model utility
-- `data/`: downloaded datasets and generated split files; excluded from Git
+- `data/`: the CIFAR-10 test batch and fixed split indices used by the shared analysis; training data and downloaded archives stay outside Git
 - `checkpoints/`: final inference weights may be retained; resume checkpoints and per-epoch histories are excluded
-- `cached_outputs/`: local model predictions; large caches are excluded from Git
+- `cached_outputs/stage4_predictions/`: audited model predictions used by the shared analysis
 - `results/`: validated Stage 4–8 metrics, compact metadata, and Stage 9 derived tables
 - `figures/`: final PNG and PDF figures
 - `archives/`: local downloaded exports; excluded from Git

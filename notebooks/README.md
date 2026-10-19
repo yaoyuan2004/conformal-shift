@@ -17,10 +17,9 @@ Stages 5–7 are combined in one executed notebook because the methods share the
 
 ## Running the notebooks
 
-- Stage 1 reads the existing CIFAR-10 archive or extracted batches and deterministically creates the three calibration/evaluation splits. Dataset files and generated split indices stay outside Git.
-- Official model training and Stage 4 cache generation use a CUDA Colab runtime. Google Drive can preserve model outputs and caches across runtime disconnects.
-- Stage 4 audits for a complete cache before doing more work. If caches are incomplete, it loads CIFAR-10 and downloads the approved CIFAR-10-C arrays only when needed, then generates the missing predictions.
-- Stages 5–8 use the Stage 4 predictions and save their metric tables under `results/`. The large prediction arrays remain local.
+- The GitHub repository includes the complete Stage 4 prediction cache bundle, the three fixed split-index files, the CIFAR-10 test batch used for label checks, and the APS/RAPS randomization values. Start with Stage 5 in `03_conformal_methods.ipynb` to recompute the clean and corruption metrics, then run Stage 8 in `04_label_shift_experiments.ipynb`. These analyses reuse the saved predictions and run without GPU inference or CIFAR-10-C downloads.
+- Stage 4 checks that all 20 prediction files are present and validates them in cache-only mode. If a cache is missing, it generates the missing predictions and needs the approved CIFAR-10-C arrays and fixed model checkpoints. A CUDA Colab runtime is recommended for cache generation.
+- Official model training requires the CIFAR-10 training data and a CUDA runtime. Large source datasets and downloaded archives stay outside Git.
 - Stage 9 reads the saved Stage 4–8 CSVs and compact metadata in `results/`. It recreates the split partition rule in memory and does not require datasets, saved split files, model weights, or prediction caches.
 
 The local pre-training notebook is supporting evidence. It does not count toward either official 75-epoch run.
