@@ -38,7 +38,7 @@ More details and the run status of each notebook are in [`notebooks/README.md`](
 
 Use Python 3.12 or newer with the packages in `requirements.txt`. PyTorch and torchvision should match the available CPU/GPU runtime.
 
-To reproduce the final tables and figures from a GitHub clone, run `notebooks/05_final_analysis.ipynb`. It reads the validated Stage 4–8 metric CSVs and compact metadata in `results/`. It does not need datasets, saved split files, model inference, prediction caches, or checkpoints. Its split-integrity check recreates the fixed Stage 1 partitions in memory from seeds 42, 43, and 44.
+After cloning the repository, run `notebooks/05_final_analysis.ipynb` to regenerate the final tables and figures. It reads the validated Stage 4–8 metric CSVs and compact metadata in `results/`. It does not require datasets, saved split files, prediction caches, checkpoints, or model inference. Its split-integrity check recreates the fixed Stage 1 partitions in memory from seeds 42, 43, and 44.
 
 To recompute the experimental metrics from a GitHub clone, start with `notebooks/03_conformal_methods.ipynb`, then run `notebooks/04_label_shift_experiments.ipynb`. The repository includes all 20 audited Stage 4 prediction caches, the three fixed split-index files, the CIFAR-10 test batch used for label checks, and the saved APS/RAPS randomization values. Stages 5–8 can therefore run from these saved inputs without model inference, a GPU, or CIFAR-10-C downloads. `notebooks/05_final_analysis.ipynb` reads the committed results and runs without datasets, caches, checkpoints, or GPU.
 
@@ -77,9 +77,9 @@ The 18 baseline reconstructions matched the saved clean metrics to numerical pre
 
 - `notebooks/`: inspectable experimental workflow
 - `src/`: small shared model utility
-- `data/`: the CIFAR-10 test batch and fixed split indices used by the shared analysis; training data and downloaded archives stay outside Git
+- `data/`: the tracked CIFAR-10 test batch used for label checks and the three fixed split-index files used by Stages 5–8. Run `notebooks/00_environment_and_data.ipynb` with an existing local CIFAR-10 copy or ZIP to prepare the data and generate the split files. The full CIFAR-10 dataset is not in Git.
 - `checkpoints/`: final inference weights may be retained; resume checkpoints and per-epoch histories are excluded
 - `cached_outputs/stage4_predictions/`: audited model predictions used by the shared analysis
 - `results/`: validated Stage 4–8 metrics, compact metadata, and Stage 9 derived tables
 - `figures/`: final PNG and PDF figures
-- `archives/`: local downloaded exports; excluded from Git
+- `archives/`: local input archives, excluded from Git. Stage 1 (`notebooks/00_environment_and_data.ipynb`) extracts a CIFAR-10 ZIP already on the machine; Stage 4 (`notebooks/02_cache_model_outputs_colab.ipynb`) downloads and extracts the approved CIFAR-10-C arrays only when they are missing. The downloaded archives remain local.
