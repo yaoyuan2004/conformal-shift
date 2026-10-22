@@ -125,7 +125,12 @@
     "label_shift_class_conditional_metrics.csv": "1559f289b87c0a57f1ecf17cfcbb34871219f255c22aa8ccd14a980f54692a87",
     "label_shift_target_priors.csv": "436c9dc132051624df0afcef9a6c765aa99388e01617d0f204608a69f70bd2c9",
     "label_shift_baseline_reconstruction_audit.csv": "c57bebd05c5075a14feffbc3fae7e9828a72d3212bbf9c5bf000df57485edd34",
-    "label_shift_monte_carlo_validation.csv": "b93e789ea3d6ab2289ba3a2588263f6137c4cc336dd6917b6d76e101d735659a"
+    "label_shift_monte_carlo_validation.csv": "b93e789ea3d6ab2289ba3a2588263f6137c4cc336dd6917b6d76e101d735659a",
+    "label_shift_rotation_target_priors.csv": "c85e94fde9b0c04142add4ffc81329bcc278014cd627e7947b9d40727cbdec80",
+    "label_shift_rotation_split_results.csv": "b4d78a9857b001ec8d40c66c10f61e6a06936f4890996ba470cd8df83eb4cdf9",
+    "label_shift_rotation_summary_mean_std.csv": "d03a19a51bb409c958f5c848764aeda3e1c8681965feb2839c313943207a4db9",
+    "label_shift_rotation_overview.csv": "84665a3a7a5a9375f5199907cf7588fdb3c099fbb834463fe28c1b08e42a145b",
+    "label_shift_rotation_manifest.json": "c57faaff3fe799734c7b04dcc97b24080af296f1f02f8942d502d7ad8e9dbca2"
   },
   "compact_metadata_sha256": {
     "results/stage4_cache_manifest.json": "fb48def6a44385d788bb10bc292260d2cf343a717350cc25c1ec55613b9ba261",
@@ -164,7 +169,8 @@
     "figure2_corruption_set_size",
     "figure3_severity5_coverage_setsize_tradeoff",
     "figure4_label_shift_coverage",
-    "figure5_class_conditional_coverage_heatmap"
+    "figure5_class_conditional_coverage_heatmap",
+    "figure6_label_shift_rotation_coverage"
   ],
   "figure_regeneration": {
     "explicit_option": "REGENERATE_FIGURES",
@@ -172,5 +178,15 @@
     "backup_directory": "figures/backups/before_explicit_regeneration_<UTC timestamp>/<figure stem>"
   },
   "scope": "No training, inference, recalibration, hyperparameter tuning, or new shifts in Stage 9.",
-  "split_note": "Three overlapping splits are sensitivity checks, not independent experimental replications."
+  "split_note": "Three overlapping splits are sensitivity checks, not independent experimental replications.",
+  "label_shift_rotation": {
+    "pair_count": 45,
+    "scenario_count_including_balanced": 136,
+    "split_result_rows": 2448,
+    "scenario_summary_rows": 816,
+    "overview_rows": 18,
+    "prior_rows": 1360,
+    "all_pair_mean_equals_balanced": true,
+    "original_example_max_absolute_error": 4.440892098500626e-16
+  }
 }
